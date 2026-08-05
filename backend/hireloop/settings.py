@@ -98,3 +98,22 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Groq
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+
+
+
+
+# Production settings
+if not DEBUG:
+    ALLOWED_HOSTS = ['*']
+
+    # WhiteNoise for static files
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+    # Database — use PostgreSQL on Render
+    if os.getenv('DATABASE_URL'):
+        import dj_database_url
+        DATABASES = {
+            'default': dj_database_url.config(conn_max_age=600)
+        }
