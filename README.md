@@ -2,15 +2,6 @@
 
 AI-powered job application tracker that helps you manage your job search, generate tailored cover letters, and analyze gaps in your resume against job descriptions.
 
-## Screenshots
-
-**AI Cover Letter Generator & Resume Gap Analysis**
-
-![Cover Letter Generator](screenshots/cover-letter-generator.png)
-
-**Resume Gap Analysis Results**
-
-![Resume Gap Analysis](screenshots/resume-gap-analysis.png)
 
 ## Features
 - **Job Application Tracking** — Keep track of every job you've applied to, its status, and key details in one place.
